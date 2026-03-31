@@ -1,6 +1,6 @@
-# Student Management Functions (Simple Guide)
+# Student Management Functions 
 This code is a small system to manage students using a list (inventory). You can add, search, update, and delete students.
-🔹 ##Main Functions
+## Main Functions
 *ask_name()*
 Asks the user to type a student name.
 It only accepts letters (no numbers).
