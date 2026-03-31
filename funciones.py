@@ -1,7 +1,10 @@
+#We import the functions
 import time
 from Cositas import * 
 import os
+#We define the functions
 def Starting():
+    
     print(Cyan + "Staring ..." + reset)
     time.sleep(1)
 
@@ -47,15 +50,16 @@ def ask_course():
 
 
 def student_state():
+    
     while True:
         student_state = input(Pink + "🔃 Enter your state (active/inactive) \n 🔃 " + reset)
-        student_state=True
+    
         if student_state == "active":
-            student_state=True
-            return student_state
+            return "active"
+        elif  student_state == "inactive":
+            return "inactive"
         else:
-            student_state == "inactive"
-            student_state=False
+            print("Error")
             break
 
 def check_list(inventary):
@@ -66,7 +70,7 @@ def check_list(inventary):
     
 def search_student(inventary, search):
 
-    found = False
+
     for student in inventary:
         if search.lower() in student["name"].lower() or search == student["id"]:
             print("student find")
@@ -75,11 +79,11 @@ def search_student(inventary, search):
             print(f"Age: {student['age']}")
             print(f"Course:{student['course']}")
             print(f"State: {student['state']}")
-            found = True
+
             return inventary
 
-        if not inventary:
-            print("Sorry,there is no student with that ID or name")
+    if not inventary:
+        print("Sorry,there is no student with that ID or name")
 
 def update_student(inventory,ID,Name,Age,Course,State):
     for student in inventory:
@@ -89,7 +93,7 @@ def update_student(inventory,ID,Name,Age,Course,State):
             student["course"] = Course,
             student["state"] =  State
             return inventory
-        print(Green + "✨ ¡student created successfully! ✨ " + reset)
+        print(Green + "✨ ¡student update successfully! ✨ " + reset)
         if not inventory:
             print("Sorry, we can't find a student with that name")
     
